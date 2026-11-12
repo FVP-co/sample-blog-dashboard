@@ -1,6 +1,6 @@
 import z from "zod";
 
-export const singUpSchema = z.object({
+export const signUpSchema = z.object({
   email: z.email(),
   name: z.string().max(64),
   age: z.number().min(5).max(120),
@@ -11,4 +11,4 @@ export const singUpSchema = z.object({
     .min(8, "Password must be at least 8 characters"),
 });
 
-export type SignUpType = z.infer<typeof singUpSchema>;
+export type SignUpType = z.infer<typeof signUpSchema>;
